@@ -1,0 +1,33 @@
+# 依赖
+node_modules/
+
+# 本机工具产物（DSH 等）
+.dsh/
+.dsh-vision-router/
+.dsh-acl-report/
+.dsh-uicheck/
+
+# 临时与日志
+*.log
+*.tsbuildinfo
+.DS_Store
+keystore.properties
+*.jks
+*.keystore
+
+# ---------------------------------------------------------------------------
+# 源文件：版权不属于本项目，不随仓库分发。
+# 放回 data/ 或仓库根目录即可重建数据库（管线按文件名自动识别）。
+# 文件名特征：含 wiki/维基 的 .htm、含 rule/万律 的 .htm、含 怪物 的 .xlsx
+# ---------------------------------------------------------------------------
+4e*wiki*.htm*
+4e Wiki.htm
+4e Rules*.htm*
+4e-rules*.htm*
+*怪物手册*合订本*.xlsx
+
+# 管线中间产物（无损层 / 规范层 / 派生层），随时可由源文件重建
+out/
+
+# 构建中的临时库
+.building-*.db

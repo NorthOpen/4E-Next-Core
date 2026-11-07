@@ -1,0 +1,9 @@
+# 统一用 LF：仓库是跨平台分发的，别让 Windows 检出时的 CRLF 造成无意义 diff
+* text=auto eol=lf
+
+# 二进制：不做换行/文本处理，也不显示 diff
+*.db      binary
+*.png     binary
+*.jpg     binary
+*.xlsx    binary
+*.woff2   binary
