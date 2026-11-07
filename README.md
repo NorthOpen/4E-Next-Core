@@ -26,7 +26,7 @@ D&D 4E 中文 SQLite 数据库。
 sqlite3 4e-next-core.db "SELECT name, level FROM entry e JOIN power p ON p.entry_id=e.id WHERE p.level >= 20 LIMIT 5;"
 ```
 
-### Python（标准库，零安装）
+### Python
 
 ```python
 import sqlite3
@@ -42,7 +42,7 @@ for row in con.execute("""
     print(row["level"], row["name"], row["usage_zh"])
 ```
 
-### Node（内置 `node:sqlite`，零依赖）
+### Node
 
 ```js
 import { DatabaseSync } from "node:sqlite";
@@ -50,7 +50,7 @@ const db = new DatabaseSync("4e-next-core.db", { readOnly: true });
 const rows = db.prepare("SELECT name, level FROM power p JOIN entry e ON e.id=p.entry_id WHERE p.level >= 20").all();
 ```
 
-### 项目自带的查询接口（TypeScript，推荐）
+### TypeScript
 
 ```ts
 import { openDb } from "./src/api/index.ts";
@@ -62,8 +62,7 @@ const ball = db.entry("power/火球术 Fireball");
 ball?.power?.parts.forEach((p) => console.log(p.label, p.text));
 db.close();
 ```
-
-命令行也能查，不用写代码：
+### CMD
 
 ```bash
 node src/cli.ts query search "火球"
